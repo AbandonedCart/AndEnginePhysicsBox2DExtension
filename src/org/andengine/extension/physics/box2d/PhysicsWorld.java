@@ -32,7 +32,7 @@ public class PhysicsWorld implements IUpdateHandler {
 	// ===========================================================
 
 	static {
-		System.loadLibrary( "andenginephysicsbox2dextension" );
+		System.loadLibrary( "aephysicsbox2d" );
 	}
 
 	public static final int VELOCITY_ITERATIONS_DEFAULT = 8;

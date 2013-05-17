@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := andenginephysicsbox2dextension
+LOCAL_MODULE    := aephysicsbox2d
 LOCAL_ARM_MODE := arm
 LOCAL_SRC_FILES := Box2D/Body.cpp \
 Box2D/ChainShape.cpp \
