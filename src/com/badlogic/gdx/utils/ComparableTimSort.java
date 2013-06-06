@@ -20,6 +20,7 @@ package com.badlogic.gdx.utils;
  * If you are using an optimizing VM, you may find that ComparableTimSort offers no performance benefit over TimSort in
  * conjunction with a comparator that simply returns {@code ((Comparable)first).compareTo(Second)}. If this is the case, you are
  * better off deleting ComparableTimSort to eliminate the code duplication. (See Arrays.java for details.) */
+@SuppressWarnings({ "unchecked", "rawtypes" })
 class ComparableTimSort {
 	/** This is the minimum sized sequence that will be merged. Shorter sequences will be lengthened by calling binarySort. If the
 	 * entire array is less than this length, no merges will be performed.
@@ -205,7 +206,6 @@ class ComparableTimSort {
 		if (DEBUG) assert lo <= start && start <= hi;
 		if (start == lo) start++;
 		for (; start < hi; start++) {
-			@SuppressWarnings("unchecked")
 			Comparable<Object> pivot = (Comparable)a[start];
 
 			// Set left (and right) to the index where a[start] (pivot) belongs
@@ -262,7 +262,6 @@ class ComparableTimSort {
 	 * @param lo index of the first element in the run
 	 * @param hi index after the last element that may be contained in the run. It is required that @code{lo < hi}.
 	 * @return the length of the run beginning at the specified position in the specified array */
-	@SuppressWarnings("unchecked")
 	private static int countRunAndMakeAscending (Object[] a, int lo, int hi) {
 		if (DEBUG) assert lo < hi;
 		int runHi = lo + 1;
@@ -361,7 +360,6 @@ class ComparableTimSort {
 	 * words, i must be equal to stackSize-2 or stackSize-3.
 	 * 
 	 * @param i stack index of the first of the two runs to merge */
-	@SuppressWarnings("unchecked")
 	private void mergeAt (int i) {
 		if (DEBUG) assert stackSize >= 2;
 		if (DEBUG) assert i >= 0;
@@ -551,7 +549,6 @@ class ComparableTimSort {
 	 * @param len1 length of first run to be merged (must be > 0)
 	 * @param base2 index of first element in second run to be merged (must be aBase + aLen)
 	 * @param len2 length of second run to be merged (must be > 0) */
-	@SuppressWarnings("unchecked")
 	private void mergeLo (int base1, int len1, int base2, int len2) {
 		if (DEBUG) assert len1 > 0 && len2 > 0 && base1 + len1 == base2;
 
@@ -655,7 +652,6 @@ class ComparableTimSort {
 	 * @param len1 length of first run to be merged (must be > 0)
 	 * @param base2 index of first element in second run to be merged (must be aBase + aLen)
 	 * @param len2 length of second run to be merged (must be > 0) */
-	@SuppressWarnings("unchecked")
 	private void mergeHi (int base1, int len1, int base2, int len2) {
 		if (DEBUG) assert len1 > 0 && len2 > 0 && base1 + len1 == base2;
 

@@ -18,6 +18,7 @@ package com.badlogic.gdx.utils;
 
 /** A pool of objects that can be reused to avoid allocation.
  * @author Nathan Sweet */
+@SuppressWarnings({ "unchecked", "rawtypes" })
 abstract public class Pool<T> {
 	public final int max;
 
